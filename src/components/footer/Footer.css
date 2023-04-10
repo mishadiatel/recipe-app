@@ -1,0 +1,33 @@
+.footer {
+  background-color: #292929;
+  font-size: 0.8rem;
+  color: var(--gray-light-color);
+}
+.footer__container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__top-right ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__top-right ul li a {
+  color: var(--gray-light-color);
+  font-weight: 700;
+}
+
+.footer__top {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__top-right {
+    display: none;
+  }
+}

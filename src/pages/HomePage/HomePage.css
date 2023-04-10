@@ -1,0 +1,197 @@
+.main__container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 30.3rem;
+  width: 100%;
+  margin-bottom: 5rem;
+  margin-top: 60px;
+}
+.bg-image {
+  position: absolute;
+  overflow: hidden;
+  height: 30.3rem;
+  top: 0;
+  width: 98.8vw;
+}
+.bg-image img {
+  /* min-width: 100vw; */
+  min-width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.content {
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.9rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4.125rem;
+  font-family: var(--font-source);
+}
+h2 {
+  font-weight: 700;
+  font-size: 3.125rem;
+  font-family: var(--font-source);
+}
+.adv-search-btn {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--black-color);
+  cursor: pointer;
+}
+.input-imitator {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 5;
+  width: 100%;
+  max-width: 37.5rem;
+  height: 3.75rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 1rem;
+}
+.input-imitator:hover {
+  cursor: pointer;
+}
+.input-imitator:hover .search-icon {
+  color: var(--black-color);
+}
+.search-icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  color: var(--gray-light-color);
+  transition: color 300ms ease;
+}
+.main-search-input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  font-size: 4rem;
+  color: var(--black-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray-light-color);
+  z-index: 105;
+  padding-left: 2rem;
+}
+
+.main-search-input::placeholder {
+  color: var(--gray-light-color);
+}
+
+.main-search-input:focus {
+  outline: none;
+}
+
+.modal-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.modal-search-icon {
+  height: 4rem;
+  width: 4rem;
+  color: var(--gray-light-color);
+}
+.close-button {
+  margin-top: -5rem;
+}
+.close-button svg:hover {
+  cursor: pointer;
+}
+.close-button svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* OUR RECIPES */
+.ourrecipe__container {
+  margin-bottom: 5rem;
+}
+.ourrecipes-title {
+  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.ourrecipes-title h2 {
+  min-width: fit-content;
+}
+.line {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.ourrecipe__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* partners */
+.partners__container {
+  margin-bottom: 5rem;
+}
+
+.partners__title {
+  padding: 2rem 0;
+}
+.partners-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-search-input {
+    font-size: 2rem;
+    padding-left: 2rem;
+  }
+  .modal-search-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .ourrecipe__container,
+  .partners-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main__container,
+  .ourrecipe__container,
+  .partners__container {
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .adv-search-btn {
+    font-size: 0.9rem;
+  }
+  .modal-content-wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .partners-items {
+    grid-template-columns: 1fr;
+  }
+}

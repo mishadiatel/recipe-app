@@ -1,0 +1,48 @@
+.option-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  align-items: center;
+  position: relative;
+}
+.option-title {
+  display: flex;
+  gap: 1rem;
+}
+
+.option-title:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.options-content {
+  position: absolute;
+  width: max-content;
+  top: 1.5rem;
+  left: 0;
+  z-index: 5;
+
+  background-color: var(--color-white);
+}
+.options-content ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.options-content ul li {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  transition: background-color 300ms ease;
+}
+.options-content ul li:hover {
+  background-color: #c3c3c3;
+}
+.options-content ul li label {
+  flex: 1;
+}
