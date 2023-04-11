@@ -88,6 +88,10 @@ body {
   background-color: var(--gray-light-text-color);
 }
 
+.blocked {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 25px;

@@ -24,15 +24,28 @@ const OurRecipe = React.lazy(() =>
 const HomePage = () => {
   const [openSearchInput, setOpenSearchInput] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-  const closeModalHandler = () => setOpenSearchInput(false);
+
   const navigate = useNavigate();
 
   const submitSearchHandler = (event) => {
     event.preventDefault();
-    navigate(`/search/${searchValue !== "" ? searchValue : "none"}`);
+    navigate(
+      `/search/${searchValue !== "" ? searchValue.toLowerCase() : "none"}`
+    );
     closeModalHandler();
   };
 
+  const openModalHandler = () => {
+    if (!document.body.classList.contains("blocked")) {
+      setOpenSearchInput(true);
+      document.body.classList.toggle("blocked");
+    }
+  };
+
+  const closeModalHandler = () => {
+    setOpenSearchInput(false);
+    document.body.classList.toggle("blocked");
+  };
   return (
     <>
       <div className="homepage">
@@ -42,12 +55,7 @@ const HomePage = () => {
           </div>
           <div className="content">
             <h1>Find a Recipe</h1>
-            <div
-              className="input-imitator"
-              onClick={() => {
-                setOpenSearchInput(true);
-              }}
-            >
+            <div className="input-imitator" onClick={openModalHandler}>
               <BiSearch className="search-icon" />
             </div>
             <Link to={"/search/none"} className="adv-search-btn">

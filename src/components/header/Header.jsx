@@ -19,12 +19,14 @@ const Header = () => {
     const colorValue = style.getPropertyValue("--orange-color");
     setLogoColor(colorValue);
   }, []);
+
+  const clickBurgerHaandler = () => {
+    setIsBurgerOpen((state) => !state);
+    document.body.classList.toggle("blocked");
+  };
   return (
     <header className={"header"}>
-      <button
-        className="burger-button"
-        onClick={() => setIsBurgerOpen((state) => !state)}
-      >
+      <button className="burger-button" onClick={clickBurgerHaandler}>
         {isBurgerOpen ? <CgClose /> : <BiMenu />}
       </button>
       <LeftMenu className={`${!isBurgerOpen ? "hidden-menu" : ""}`} />

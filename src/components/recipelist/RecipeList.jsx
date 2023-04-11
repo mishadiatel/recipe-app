@@ -3,9 +3,10 @@ import "./RecipeList.css";
 
 const FoodCard = React.lazy(() => import("../foodCard/FoodCard"));
 
-const RecipeList = ({ isLoading, recipes }) => {
+const RecipeList = ({ isLoading, recipes, amount, food }) => {
   return (
     <div className="recipes-list">
+      
       {isLoading ? (
         <div className="container message__container">
           <p className="search-message">Loading...</p>

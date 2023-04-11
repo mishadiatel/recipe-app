@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const FoodCard = ({ recipe }) => {
   return (
-    <Link className="card-link-wrapper">
+    <Link to={`/recipe/${recipe.label}`} className="card-link-wrapper">
       <article className="card-wrapper">
         <div className="card-image-wrapper">
           <img src={recipe.image} alt="recipe card" className="card-image" />
