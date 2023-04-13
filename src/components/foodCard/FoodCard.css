@@ -1,5 +1,6 @@
 .card-link-wrapper {
   width: 100%;
+  transition: transform 300ms ease;
 }
 
 .card-wrapper {
@@ -63,6 +64,11 @@
   color: var(--gray-light-color);
   font-size: 0.8rem;
   place-self: end;
+}
+@media screen and (min-width: 550px) {
+  .card-link-wrapper:hover {
+    transform: scale(1.07);
+  }
 }
 
 @media screen and (max-width: 550px) {

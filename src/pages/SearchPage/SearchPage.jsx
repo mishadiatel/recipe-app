@@ -197,7 +197,7 @@ export const loader = async ({ params }) => {
       return fetchedRecipes;
     } catch (err) {
       console.log(err);
-      return json({ message: "Could not fetch reciped" }, { status: 500 });
+      return json({ message: "Could not fetch recipes" }, { status: 500 });
     }
   }
 };

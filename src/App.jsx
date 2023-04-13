@@ -1,12 +1,10 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import {
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import PagesWrapper from "./pages/PagesWrapper/PagesWrapper";
 import HomePage from "./pages/HomePage/HomePage";
 import { loader as searchResultsLoader } from "./pages/SearchPage/SearchPage";
+import { loader as singleRecipeLoader } from "./pages/RecipePage/RecipePage";
 const SearchPage = React.lazy(() => import("./pages/SearchPage/SearchPage"));
 const RecipePage = React.lazy(() => import("./pages/RecipePage/RecipePage"));
 const Footer = React.lazy(() => import("./components/footer/Footer"));
@@ -19,12 +17,13 @@ function App() {
       children: [
         { index: true, element: <HomePage /> },
         {
-          path: "recipe/:recipetitle",
+          path: "search/:searchElement/:recipetitle",
           element: (
             <Suspense fallback={<div>Loading...</div>}>
               <RecipePage />
             </Suspense>
           ),
+          loader: singleRecipeLoader,
         },
       ],
     },
