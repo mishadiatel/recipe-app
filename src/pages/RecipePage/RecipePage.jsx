@@ -1,5 +1,6 @@
 import React from "react";
 import "./RecipePage.css";
+import { BiLeftArrowAlt } from "react-icons/bi";
 import { fetchSingleResipe } from "../../api/api";
 import { Link, redirect, useLoaderData, useParams } from "react-router-dom";
 
@@ -45,24 +46,33 @@ const RecipePage = () => {
               return (
                 <article className="recipe-ingredients__ingredient-item">
                   <div className="red-round"></div>
-                  {Number(ingredient.quantity) !== 0 && (
-                    <span>{ingredient.quantity}</span>
-                  )}
-                  {ingredient.measure && <span>{ingredient.measure}</span>}
-                  {ingredient.food && <span>{ingredient.food}</span>}
-                  {ingredient.weight && (
-                    <span>({ingredient.weight.toFixed(2)} gram) </span>
-                  )}
+                  <div className="ingredient-item-content">
+                    {Number(ingredient.quantity) !== 0 && (
+                      <span>{ingredient.quantity}</span>
+                    )}
+                    {ingredient.measure && <span>{ingredient.measure}</span>}
+                    {ingredient.food && <span>{ingredient.food}</span>}
+                    {ingredient.weight && (
+                      <span>({ingredient.weight.toFixed(2)} gram) </span>
+                    )}
+                  </div>
                 </article>
               );
             })}
           </div>
-          {recipe.totalWeight && <p>Total weight {recipe.totalWeight}</p>}
+          {recipe.totalWeight && (
+            <p className="recipe-totalweight">Total weight {recipe.totalWeight.toFixed(2)} gram</p>
+          )}
         </div>
       </section>
-      <Link to={`/search/${params.searchElement}`}>
-        <span>Come back to search page</span>
-      </Link>
+      <div className="recipe-exit">
+        <Link to={`/search/${params.searchElement}`} className="recipe-exit-button">
+          
+            <BiLeftArrowAlt />
+            <span>Go to search page</span>
+          
+        </Link>
+      </div>
     </div>
   );
 };
