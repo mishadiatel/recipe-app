@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./RecipePage.css";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { fetchSingleResipe } from "../../api/api";
@@ -7,7 +7,9 @@ import { Link, redirect, useLoaderData, useParams } from "react-router-dom";
 const RecipePage = () => {
   const recipe = useLoaderData();
   const params = useParams();
-  console.log(params);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="recipe-page">
       <section className="recipe-head">
@@ -61,16 +63,19 @@ const RecipePage = () => {
             })}
           </div>
           {recipe.totalWeight && (
-            <p className="recipe-totalweight">Total weight {recipe.totalWeight.toFixed(2)} gram</p>
+            <p className="recipe-totalweight">
+              Total weight {recipe.totalWeight.toFixed(2)} gram
+            </p>
           )}
         </div>
       </section>
       <div className="recipe-exit">
-        <Link to={`/search/${params.searchElement}`} className="recipe-exit-button">
-          
-            <BiLeftArrowAlt />
-            <span>Go to search page</span>
-          
+        <Link
+          to={`/search/${params.searchElement}`}
+          className="recipe-exit-button"
+        >
+          <BiLeftArrowAlt />
+          <span>Go to search page</span>
         </Link>
       </div>
     </div>

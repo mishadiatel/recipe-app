@@ -53,7 +53,7 @@ const Header = () => {
             <FaTelegram />
           </a>
           <a
-            href="https://google.com"
+            href="https://www.instagram.com/misha_diatel/"
             className="social"
             rel="noreferrer"
             target="_blank"
